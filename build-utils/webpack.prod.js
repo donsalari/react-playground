@@ -9,7 +9,6 @@ const config = {
   output: {
     filename: 'static/[name].[hash].js',
   },
-  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -24,7 +23,6 @@ const config = {
               modules: true,
               importLoaders: 1,
               localsConvention: 'camelCase',
-              sourceMap: true,
             },
           },
           {

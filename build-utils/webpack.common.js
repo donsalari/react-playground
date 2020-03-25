@@ -2,6 +2,9 @@ const commonPaths = require('./common-paths');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
+  entry: {
+    vendor: ['react']
+  },
   output: {
     path: commonPaths.outputPath,
     publicPath: '/'

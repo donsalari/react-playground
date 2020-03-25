@@ -25,9 +25,6 @@ const config = {
               localsConvention: 'camelCase',
             },
           },
-          {
-            loader: 'postcss-loader',
-          },
         ],
       },
     ],

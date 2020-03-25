@@ -4,11 +4,8 @@ const Features = () => {
   const list = [
     'React 16',
     'React Router 5',
-    'Hot Module Replacement',
-    'CSS Autoprefixer',
-    'CSS Modules with SourceMap',
-    'Stage 1 Preset',
     'Webpack 4',
+    'CSS Modules with SourceMap',
     'Code splitting by React Lazy'
   ];
 

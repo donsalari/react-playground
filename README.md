@@ -5,8 +5,7 @@
 ## Features
 
 - React 16
-- React Router 4
-- Semantic UI as the CSS Framework
+- React Router 5
 - Hot Module Replacement
 - CSS Autoprefixer
 - CSS Modules with SourceMap

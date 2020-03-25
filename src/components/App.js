@@ -20,13 +20,11 @@ const AsyncNoMatch = importedComponent(
 const App = () => {
   return (
     <Router>
-      <div>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/dynamic" component={AsyncDynamicPAge} />
-          <Route component={AsyncNoMatch} />
-        </Switch>
-      </div>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/dynamic" component={AsyncDynamicPAge} />
+        <Route component={AsyncNoMatch} />
+      </Switch>
     </Router>
   );
 };

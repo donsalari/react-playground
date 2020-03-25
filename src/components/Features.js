@@ -6,7 +6,7 @@ const Features = () => {
     'React Router 5',
     'Webpack 4',
     'CSS Modules with SourceMap',
-    'Code splitting by React Lazy'
+    'Code splitting with React Lazy Suspense'
   ];
 
   return (

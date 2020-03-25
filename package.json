@@ -1,7 +1,7 @@
 {
   "name": "react-playground",
   "version": "1.0.0",
-  "description": "React playground",
+  "description": "React Playground",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --env.env=dev",

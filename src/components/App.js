@@ -1,30 +1,27 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Switch, BrowserRouter as Router, Route } from 'react-router-dom';
-import importedComponent from 'react-imported-component';
+
 import Home from './Home';
 import Loading from './Loading';
 
-const AsyncDynamicPAge = importedComponent(
-  () => import(/* webpackChunkName:'DynamicPage' */ './DynamicPage'),
-  {
-    LoadingComponent: Loading
-  }
+const DynamicPage = React.lazy(() =>
+  import(/* webpackChunkName: "dynamic-page" */ "./DynamicPage")
 );
-const AsyncNoMatch = importedComponent(
-  () => import(/* webpackChunkName:'NoMatch' */ './NoMatch'),
-  {
-    LoadingComponent: Loading
-  }
+
+const FourOhFour = React.lazy(() =>
+  import(/* webpackChunkName: "no-match" */ "./FourOhFour")
 );
 
 const App = () => {
   return (
     <Router>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/dynamic" component={AsyncDynamicPAge} />
-        <Route component={AsyncNoMatch} />
-      </Switch>
+      <Suspense fallback={Loading}>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/dynamic" component={DynamicPage} />
+          <Route component={FourOhFour} />
+        </Switch>
+      </Suspense>
     </Router>
   );
 };

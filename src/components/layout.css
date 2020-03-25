@@ -3,12 +3,12 @@
   padding-right: 10%;
 }
 
-.pull-right {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.h1 {
+.header {
   margin-top: 10px;
   margin-bottom: 20px;
+}
+
+.floatRight {
+  display: flex;
+  justify-content: flex-end;
 }

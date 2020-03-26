@@ -6,10 +6,11 @@
 
 - React 16
 - React Router 5
-- Hot Module Replacement
 - Webpack 4
-- Code splitting with React Lazy Suspense
+- CSS Modules
+- Code splitting with React Lazy/Suspense
 - [Webpack Bundle Analyzer](https://github.com/th0r/webpack-bundle-analyzer)
+- Hot Module Replacement
 
 ## Usage
 

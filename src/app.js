@@ -1,15 +1,15 @@
 import React, { Suspense } from 'react';
 import { Switch, BrowserRouter as Router, Route } from 'react-router-dom';
 
-import Home from './pages/Home';
+import HomePage from './pages/Home';
 import Loading from './components/Loading';
 
 const LazyPage = React.lazy(() =>
-  import(/* webpackChunkName: "dynamic-page" */ "./pages/LazyPage")
+  import(/* webpackChunkName: "lazy-page" */ "./pages/Lazy")
 );
 
 const FourOhFour = React.lazy(() =>
-  import(/* webpackChunkName: "no-match" */ "./pages/FourOhFour")
+  import(/* webpackChunkName: "four-oh-four" */ "./pages/FourOhFour")
 );
 
 const App = () => {
@@ -17,7 +17,7 @@ const App = () => {
     <Router>
       <Suspense fallback={<Loading />}>
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={HomePage} />
           <Route exact path="/dynamic" component={LazyPage} />
           <Route component={FourOhFour} />
         </Switch>

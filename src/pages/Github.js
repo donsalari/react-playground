@@ -1,19 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from 'react';
+import { useQuery } from 'react-query'
 
 import Layout from "../components/Layout";
 import Loading from "../components/Loading";
 
-const Features = () => {
+const Github = () => {
   const [page, setPage] = useState(1);
-  const [commitHistory, setCommitHistory] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
 
-  const loadMoreCommit = () => {
-    setPage(page + 1);
-  };
-
-  useEffect(() => {
-    fetch(
+  const fetchGithub = async () => {
+    const response = await fetch(
       `https://api.github.com/search/commits?q=repo:facebook/react+css&page=${page}`,
       {
         method: "GET",
@@ -21,39 +16,48 @@ const Features = () => {
           Accept: "application/vnd.github.cloak-preview",
         }),
       }
-    )
-      .then((res) => res.json())
-      .then((response) => {
-        setCommitHistory(response.items);
-        setIsLoading(false);
-      })
-      .catch((error) => console.log(error));
-  }, [page]);
+    );
+    const data = await response.json();
+    return data.items;
+  };
+
+  const loadMoreCommit = () => {
+    setPage(page + 1);
+  };
+
+  const { status, data, error } = useQuery(['github', page], fetchGithub);
 
   return (
     <Layout>
-      <h2> API calls with React Hooks </h2>
-      {isLoading && <Loading />}
+      <h2>API calls using React Query</h2>
 
-      {commitHistory.length !== 0 && (
-        <button onClick={loadMoreCommit}>Load More Commits</button>
-      )}
-
-      {commitHistory.map((c, index) => (
-        <div key={index}>
-          {c.commit && (
-            <>
-              <div>
-                <h3>{c.commit.committer.name}</h3>
-                <p>{c.commit.message}</p>
-              </div>
-              <hr />
-            </>
+      {status === 'loading' ? (
+        <Loading />
+      ) : status === 'error' ? (
+        <div>Something went wrong: {error}</div>
+      ) : (
+        <>
+          {data.length !== 0 && (
+            <button onClick={loadMoreCommit}>Load More Commits</button>
           )}
-        </div>
-      ))}
+
+          {data.map((c, index) => (
+            <div key={index}>
+              {c.commit && (
+                <>
+                  <div>
+                    <h3>{c.commit.committer.name}</h3>
+                    <p>{c.commit.message}</p>
+                  </div>
+                  <hr />
+                </>
+              )}
+            </div>
+          ))}
+        </>
+      )}
     </Layout>
   );
 };
 
-export default Features;
+export default Github;

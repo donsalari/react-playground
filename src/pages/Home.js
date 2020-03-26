@@ -10,7 +10,7 @@ const Home = () => {
       <Features />
       <Link to="/dynamic">Navigate to Lazy Page</Link>
       <br />
-      <Link to="/github">API calls with React Hooks</Link>
+      <Link to="/github">API calls using React Query</Link>
     </Layout>
   );
 };

@@ -2,7 +2,7 @@ import React from 'react';
 
 import Layout from '../components/Layout';
 
-const NoMatch = () => {
+const FourOhFour = () => {
   return (
     <Layout>
       <strong>Page not found!</strong>
@@ -10,4 +10,4 @@ const NoMatch = () => {
   );
 };
 
-export default NoMatch;
+export default FourOhFour;

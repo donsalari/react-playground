@@ -33,12 +33,6 @@ const config = {
   optimization: {
     splitChunks: {
       cacheGroups: {
-        styles: {
-          name: "styles",
-          test: /\.css$/,
-          chunks: "all",
-          enforce: true,
-        },
         vendor: {
           chunks: "initial",
           test: "vendor",

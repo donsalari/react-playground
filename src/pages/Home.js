@@ -9,6 +9,8 @@ const Home = () => {
     <Layout>
       <Features />
       <Link to="/dynamic">Navigate to Lazy Page</Link>
+      <br />
+      <Link to="/github">API calls with React Hooks</Link>
     </Layout>
   );
 };

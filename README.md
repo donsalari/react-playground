@@ -1,21 +1,17 @@
 # react-playground
 
-> React Starter Boilerplate with Hot Module Replacement and Webpack 4
+> Minimal React boilerplate
 
 ## Features
 
 - React 16
 - React Router 5
 - Hot Module Replacement
-- CSS Autoprefixer
-- CSS Modules with SourceMap
-- @babel/plugin-proposal-class-properties
-- @babel/plugin-syntax-dynamic-import
 - Webpack 4
-- Code splitting by Route and Vendor
+- Code splitting with React Lazy Suspense
 - [Webpack Bundle Analyzer](https://github.com/th0r/webpack-bundle-analyzer)
 
-### Usage
+## Usage
 
 Install dependencies
 
@@ -29,7 +25,7 @@ Run development server
 $ yarn dev
 ```
 
-### Building
+## Building
 
 ```
 $ yarn build
@@ -37,7 +33,11 @@ $ yarn build
 
 Will create a `dist` directory containing your compiled code.
 
-Depending on your needs, you might want to do more optimization to the production build.
+Run production server
+
+```
+$ yarn start
+```
 
 ## Webpack Bundle Analyzer
 

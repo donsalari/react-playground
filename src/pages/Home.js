@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <Layout>
       <Features />
-      <Link to="/dynamic">Navigate to Dynamic Page</Link>
+      <Link to="/dynamic">Navigate to Lazy Page</Link>
     </Layout>
   );
 };

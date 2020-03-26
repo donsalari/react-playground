@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
 
 import HomePage from "./pages/Home";
+import GithubPage from "./pages/Github";
 import Loading from "./components/Loading";
 
 const LazyPage = React.lazy(() =>
@@ -19,6 +20,7 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/dynamic" component={LazyPage} />
+          <Route exact path="/github" component={GithubPage} />
           <Route component={FourOhFour} />
         </Switch>
       </Suspense>

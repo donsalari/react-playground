@@ -820,19 +820,11 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-<<<<<<< HEAD
-=======
 "@scarf/scarf@^0.1.3":
   version "0.1.3"
   resolved "https://npme.walmart.com/@scarf/scarf/-/scarf-0.1.3.tgz#536f4fe54c613fca20f84dc7700ed3b8f1fb73cf"
   integrity sha512-ftMyZO7Mi8JQh8XLBcuH3erPGmT4CU4s131nsZIDC7/PYXxaDCJtOzbz3okH0YiTAif+DSIlFhX6d7FXLOtnvA==
 
-"@types/color-name@^1.1.1":
-  version "1.1.1"
-  resolved "https://npme.walmart.com/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
-  integrity sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
-
->>>>>>> api calls with react-querry
 "@types/events@*":
   version "3.0.0"
   resolved "https://npme.walmart.com/@types/events/-/events-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useQuery } from 'react-query'
+import { usePaginatedQuery } from 'react-query'
 
 import Layout from "../components/Layout";
 import Loading from "../components/Loading";
@@ -25,7 +25,10 @@ const Github = () => {
     setPage(page + 1);
   };
 
-  const { status, data, error } = useQuery(['github', page], fetchGithub);
+  // `resolvedData` will either resolve to the latest page's data
+  // or if fetching a new page, the last successful page's data
+  // so you will not see a blank page between the pages
+  const { status, resolvedData, error } = usePaginatedQuery(['github', page], fetchGithub);
 
   return (
     <Layout>
@@ -37,11 +40,11 @@ const Github = () => {
         <div>Something went wrong: {error}</div>
       ) : (
         <>
-          {data.length !== 0 && (
+          {resolvedData.length !== 0 && (
             <button onClick={loadMoreCommit}>Load More Commits</button>
           )}
 
-          {data.map((c, index) => (
+          {resolvedData.map((c, index) => (
             <div key={index}>
               {c.commit && (
                 <>

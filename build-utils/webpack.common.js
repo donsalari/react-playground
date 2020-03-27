@@ -1,5 +1,17 @@
 const commonPaths = require('./common-paths');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
+
+const plugins = [
+  new HtmlWebpackPlugin({
+    template: `public/index.html`,
+    favicon: `public/favicon.ico`
+  })
+];
+
+if (process.env.ANALYZE_WEBPACK_BUNDLE === "true") {
+  plugins.push(new BundleAnalyzerPlugin());
+}
 
 const config = {
   entry: {
@@ -36,12 +48,7 @@ const config = {
       }
     }
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: `public/index.html`,
-      favicon: `public/favicon.ico`
-    })
-  ]
+  plugins: [...plugins]
 };
 
 module.exports = config;

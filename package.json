@@ -4,11 +4,12 @@
   "description": "React Playground",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --env.env=dev",
-    "dev:bundleanalyzer": "yarn dev -- --env.addons=bundleanalyzer",
+    "build": "NODE_ENV=production webpack",
+    "build:bundleanalyzer": "ANALYZE_WEBPACK_BUNDLE yarn build",
+    "dev": "webpack-dev-server",
+    "dev:bundleanalyzer": "ANALYZE_WEBPACK_BUNDLE=true yarn dev",
+    "nuke": "rm -rf dist node_modules",
     "prebuild": "rm -rf dist",
-    "build": "NODE_ENV=production webpack -p --env.env=prod",
-    "build:bundleanalyzer": "yarn build -- --env.addons=bundleanalyzer",
     "start": "node ./server.js"
   },
   "dependencies": {

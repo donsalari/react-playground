@@ -1,13 +1,13 @@
-const commonPaths = require('./common-paths');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const commonPaths = require("./common-paths");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const config = {
-  mode: 'production',
+  mode: "production",
   entry: {
     app: [`${commonPaths.appEntry}/index.js`],
   },
   output: {
-    filename: 'static/[name].[hash].js',
+    filename: "static/[name].[hash].js",
   },
   module: {
     rules: [
@@ -18,11 +18,11 @@ const config = {
             loader: MiniCssExtractPlugin.loader,
           },
           {
-            loader: 'css-loader',
+            loader: "css-loader",
             options: {
               modules: true,
               importLoaders: 1,
-              localsConvention: 'camelCase',
+              localsConvention: "camelCase",
             },
           },
         ],
@@ -31,7 +31,7 @@ const config = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'styles/[name].[hash].css',
+      filename: "styles/[name].[hash].css",
     }),
   ],
 };

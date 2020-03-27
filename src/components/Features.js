@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
 
 const Features = () => {
   const list = [
-    'React 16',
-    'React Router 5',
-    'Webpack 4',
-    'CSS Modules',
-    'Code splitting with React Lazy/Suspense',
-    'Hot Module Replacement'
+    "React 16",
+    "React Router 5",
+    "Webpack 4",
+    "CSS Modules",
+    "Code splitting with React Lazy/Suspense",
+    "Hot Module Replacement",
   ];
 
   return (

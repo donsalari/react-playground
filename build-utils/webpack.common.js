@@ -1,12 +1,12 @@
-const commonPaths = require('./common-paths');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const commonPaths = require("./common-paths");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 const plugins = [
   new HtmlWebpackPlugin({
     template: `public/index.html`,
-    favicon: `public/favicon.ico`
-  })
+    favicon: `public/favicon.ico`,
+  }),
 ];
 
 if (process.env.ANALYZE_WEBPACK_BUNDLE === "true") {
@@ -15,40 +15,40 @@ if (process.env.ANALYZE_WEBPACK_BUNDLE === "true") {
 
 const config = {
   entry: {
-    vendor: ['react']
+    vendor: ["react"],
   },
   output: {
     path: commonPaths.outputPath,
-    publicPath: '/'
+    publicPath: "/",
   },
   module: {
     rules: [
       {
         test: /\.(js)$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
-      }
-    ]
+        use: ["babel-loader"],
+      },
+    ],
   },
   optimization: {
     splitChunks: {
       cacheGroups: {
         styles: {
-          name: 'styles',
+          name: "styles",
           test: /\.css$/,
-          chunks: 'all',
-          enforce: true
+          chunks: "all",
+          enforce: true,
         },
         vendor: {
-          chunks: 'initial',
-          test: 'vendor',
-          name: 'vendor',
-          enforce: true
-        }
-      }
-    }
+          chunks: "initial",
+          test: "vendor",
+          name: "vendor",
+          enforce: true,
+        },
+      },
+    },
   },
-  plugins: [...plugins]
+  plugins: [...plugins],
 };
 
 module.exports = config;

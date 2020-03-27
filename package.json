@@ -24,7 +24,6 @@
     "@babel/preset-env": "^7.9.0",
     "@babel/preset-react": "^7.9.4",
     "babel-loader": "^8.1.0",
-    "chalk": "^3.0.0",
     "css-loader": "^3.4.2",
     "express": "^4.17.1",
     "html-webpack-plugin": "^4.0.1",

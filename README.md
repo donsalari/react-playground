@@ -9,7 +9,7 @@
 - Webpack 4
 - CSS Modules
 - Code splitting with React Lazy/Suspense
-- [Webpack Bundle Analyzer](https://github.com/th0r/webpack-bundle-analyzer)
+- Webpack Bundle Analyzer
 - Hot Module Replacement
 
 ## Usage

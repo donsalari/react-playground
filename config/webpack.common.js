@@ -21,10 +21,13 @@ const config = {
     path: commonPaths.outputPath,
     publicPath: "/",
   },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js']
+  },
   module: {
     rules: [
       {
-        test: /\.(js)$/,
+        test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
         use: ["babel-loader"],
       },
